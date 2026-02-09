@@ -16,9 +16,39 @@ namespace W26Week6MidtermReview
     /// </summary>
     public partial class MainWindow : Window
     {
+        Employee _emp;
+        List<Employee> _employees;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            rdoHourly.IsChecked = true;
+            _employees = new List<Employee>();
+        }
+
+        private void rdoCommission_Checked(object sender, RoutedEventArgs e)
+        {
+            lblInput2.Content = "Gross Sales";
+            lblInput3.Content = "Commission Rate";
+        }
+
+        private void rdoHourly_Checked(object sender, RoutedEventArgs e)
+        {
+            lblInput2.Content = "Hours Worked";
+            lblInput3.Content = "Hourly Wage";
+        }
+
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+            rdoHourly.IsChecked = true;
+            txtName.Text = txtInput2.Text = txtInput3.Text = "";
+            txtGrossEarnings.Text = txtTax.Text = txtNetEarnings.Text = "";
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }
