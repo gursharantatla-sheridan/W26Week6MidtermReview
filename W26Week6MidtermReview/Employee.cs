@@ -8,6 +8,11 @@ namespace W26Week6MidtermReview
     {
         public string Name { get; set; }
 
+        public Employee (string name)
+        {
+            Name = name;
+        }
+
         public abstract double GrossEarnings();
 
         public double Tax()
